@@ -47,6 +47,7 @@ Session.vim
 # env
 env.yml
 .env
+auth-create-event
 
 # Jetbrains IDEs
 .idea
