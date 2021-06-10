@@ -13,7 +13,8 @@ export const main = handler(async (event, context) => {
       noteId: uuid.v1(), // A unique uuid
       content: data.content, // Parsed from request body
       attachment: data.attachment, // Parsed from request body
-      createdAt: Date.now(), // Current Unix timestamp
+			createdAt: Date.now(), // Current Unix timestamp
+			completed: false
     },
   };
 	// dynamoDb object has access to all dynamodb methods
