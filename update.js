@@ -15,7 +15,7 @@ export const main = handler(async (event, context) => {
     UpdateExpression: "SET content = :content, attachment = :attachment",
     ExpressionAttributeValues: {
       ":attachment": data.attachment || null,
-      ":content": data.content || null,
+      ":content": data.content || "nullString",
     },
     // 'ReturnValues' specifies if and how to return the item's attributes,
     // where ALL_NEW returns all attributes of the item after the update; you
@@ -25,5 +25,5 @@ export const main = handler(async (event, context) => {
 
   await dynamoDb.update(params);
 
-  return { status: true };
+  return { status: data };
 });
